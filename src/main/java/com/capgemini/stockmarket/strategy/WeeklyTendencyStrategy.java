@@ -27,7 +27,7 @@ public abstract class WeeklyTendencyStrategy implements InvestmentStrategy {
 		stockMarket.getCompanies().forEach(company -> {
 			try {
 				if (checkTendency(stockMarket, company)) {
-					Long amount = 10L;
+					Long amount = 300L;
 					BigDecimal value = brokersOffice.calculatePurchasingCost(company, amount);
 					Transaction transaction = new Transaction(company, amount, value);
 					if (checkInvestorHasEnoughMoney(transaction, moneyToSpend)) {

@@ -10,7 +10,6 @@ import com.capgemini.stockmarket.data.LineMatcher;
 
 public class LineMatcherImpl implements LineMatcher {
 
-	@Override
 	public boolean matchTheStockDataPattern(String line) {
 		if (!line.matches("^\\w*,20\\d\\d[0-1]\\d[0-3]\\d,[1-9]\\d*\\W\\d*$.*")
 				&& !line.matches("^\\w*,20\\d\\d[0-1]\\d[0-3]\\d,[1-9]\\d*$.*")) {

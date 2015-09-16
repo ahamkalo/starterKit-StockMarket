@@ -11,12 +11,12 @@ import com.capgemini.stockmarket.objects.Stock;
 
 public class DataProviderImpl implements DataProvider {
 	private LineReader lineReader;
-	private LinesToMapConverter converter;
+	private LinesToMapConverter linesToMapConverter;
 	String path;
 
 	public DataProviderImpl(String path) {
 		lineReader = new LineReaderImpl(path);
-		converter = new LinesToMapConverterImpl();
+		linesToMapConverter = new LinesToMapConverterImpl();
 		this.path = path;
 	}
 
@@ -24,6 +24,6 @@ public class DataProviderImpl implements DataProvider {
 	public SortedMap<Date, List<Stock>> getStocksMap() {
 		List<String> lines = lineReader.getAllLinesFromFile();
 
-		return converter.convert(lines);
+		return linesToMapConverter.convert(lines);
 	}
 }
